@@ -317,7 +317,7 @@ img {
 	width: 408px;
 	min-height: 584px;
 	border-radius: 4px;
-	padding: 24px;
+	padding: 72px 24px 24px 24px;
 
 	background: #FCFCFC;
 	box-shadow: 
@@ -396,11 +396,12 @@ img {
 .modal__main--text {
 	color: var(--NAVY-BLUE, #2E2F42);
 	text-align: center;
+	margin-bottom: 4px;
 
 	font-size: 16px;
 	font-weight: 500;
-	line-height: 1.5;
-	letter-spacing: 0.02em;
+	line-height: 1.17; 
+	letter-spacing: 0.04em;
 }
 
 .input__field--name {
@@ -413,7 +414,7 @@ img {
 	background-color: transparent;
 	outline: 0 solid transparent;
 
-	transition: border-color 250ms linear;
+	transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .input__field--name:focus {
@@ -444,6 +445,7 @@ img {
 	width: 12px;
 	height: 12px;
 	fill: #2E2F42;
+	fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 	pointer-events: none;
 }
@@ -457,12 +459,17 @@ img {
 	height: 120px;
 	padding: 8px 16px;
 
+	font-size: 12px;
+	line-height: 1.17;
+	letter-spacing: 0.04em;
+	color: rgba(46, 47, 66, 0.4);
+
 	border-radius: 4px;
 	border: 1px solid var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.40));
 	resize: none;
 	background-color: transparent;
 	outline: 0 solid transparent;
-	transition: border-color 250ms linear;
+	 transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .input__field--comments:focus {
@@ -477,19 +484,21 @@ img {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	margin-bottom: 24px;
 }
 .modal__check--box {
 	/* margin-right: 8px; */
 }
 
 .privat__police--text {
-	display: inline-flex;
+	display: block;
 	color: var(--LIGHT-SLATE, #8E8F99);
 
 	font-size: 12px;
 	font-weight: 400;
-	line-height: 1.167;
-	letter-spacing: 0.03em;
+	line-height: 1.17;
+	letter-spacing: 0.04em;
 }
 
 .modal__policy--link {
@@ -513,22 +522,30 @@ img {
 	border-radius: 2px;
 	cursor: pointer;
 	margin-right: 8px;
+	fill: transparent; 
+
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+	border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+	fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .input__svg--check {
-	width: 16px;
-	height: 16px;
+	width: 10px;
+	height: 8px;
 	fill: #FCFCFC;
 	opacity: 0;
 }
 
 .modal__check--box:checked + .privat__police--text > .our-check-box {
 	background-color: #404BBF;
-	border-color: #404BBF;
+	
+	border: none;
+	fill: var(--initial-filter-color)
 }
 
 .modal__check--box:focus + .privat__police--text > .our-check-box {
 	outline: 1px solid #4D5AE5;
+	
 }
 
 .modal__check--box:checked + .privat__police--text > .our-check-box > .input__svg--check {
@@ -552,6 +569,9 @@ img {
 	font-weight: 500;
 	line-height: 1.5;
 	letter-spacing: 0.04em;
+
+	cursor: pointer;
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* ===== / INPUT FORMM ===== */
 /* ------------------------------------ */
