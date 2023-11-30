@@ -305,6 +305,10 @@ img {
 }
 
 .modal {
+	/* display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center; */
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -312,7 +316,6 @@ img {
 
 	width: 408px;
 	min-height: 584px;
-	flex-shrink: 0;
 	border-radius: 4px;
 	padding: 24px;
 
@@ -328,7 +331,7 @@ img {
 	transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-button {
+.modal__button--cross {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -349,8 +352,8 @@ img {
 	cursor: pointer;
 }
 
-.modal-button:hover,
-.modal-button:focus {
+.modal__button--cross:hover,
+.modal__button--cross:focus {
 	border: none;
 	background-color: #404bbf;
 }
@@ -367,15 +370,191 @@ img {
 	
 }
 
-.modal-button:hover,
-.modal-button:focus {
+.modal__button--cross:hover,
+.modal__button--cross:focus {
 	fill: #ffffff;
 }
 
-/* .modal-cross:hover,
-.modal-cross:focus {
-	fill: #ffffff;
-} */
+/* ======== INPUT FORM ======== */
+.input__fields--wrapper {
+	margin-bottom: 8px;
+}
+.input__fields--wrapper4 {
+	margin-bottom: 16px;
+}
+.modal__title--text {
+	color: var(--NAVY-BLUE, #2E2F42);
+	text-align: center;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1.5;
+	letter-spacing: 0.02em;
+	margin-top: 48px;
+	margin-bottom: 16px;
+}
+
+.modal__main--text {
+	color: var(--NAVY-BLUE, #2E2F42);
+	text-align: center;
+
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1.5;
+	letter-spacing: 0.02em;
+}
+
+.input__field--name {
+	width: 100%;
+	height: 40px;
+	padding: 11px 11px 11px 38px;
+
+	border-radius: 4px;
+	border: 1px solid #2E2F4266;
+	background-color: transparent;
+	outline: 0 solid transparent;
+
+	transition: border-color 250ms linear;
+}
+
+.input__field--name:focus {
+	border-color: #4D5AE5;		
+}
+
+.input__field--name:focus + .input__icon--user {
+	fill:  #4D5AE5;
+}
+
+.modal__main--text {
+	display: block;
+	color: var(--LIGHT-SLATE, #8E8F99);
+	padding-bottom: 4px;
+
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.167;
+	letter-spacing: 0.03em;
+}
+
+.input__icon--user {
+	position: absolute;
+	top: 50%;
+	left: 16px;
+	transform: translateY(-50%);
+
+	width: 12px;
+	height: 12px;
+	fill: #2E2F42;
+
+	pointer-events: none;
+}
+
+.wrapper__input-and-icon {
+	position: relative;
+}
+
+.input__field--comments {
+	width: 100%;
+	height: 120px;
+	padding: 8px 16px;
+
+	border-radius: 4px;
+	border: 1px solid var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.40));
+	resize: none;
+	background-color: transparent;
+	outline: 0 solid transparent;
+	transition: border-color 250ms linear;
+}
+
+.input__field--comments:focus {
+	border-color: #4D5AE5;		
+}
+
+.input__field--comments::placeholder {
+	color: var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.40));
+}
+
+.input__checkbox--wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.modal__check--box {
+	/* margin-right: 8px; */
+}
+
+.privat__police--text {
+	display: inline-flex;
+	color: var(--LIGHT-SLATE, #8E8F99);
+
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.167;
+	letter-spacing: 0.03em;
+}
+
+.modal__policy--link {
+	color: var(--IRIS, #4D5AE5);
+
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.33;
+	letter-spacing: 0.03em;
+	text-decoration-line: underline;
+}
+
+.our-check-box {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 16px;
+	height: 16px;
+	stroke-width: 1px;
+	border: 1px solid rgba(46, 47, 66, 0.40);
+	border-radius: 2px;
+	cursor: pointer;
+	margin-right: 8px;
+}
+
+.input__svg--check {
+	width: 16px;
+	height: 16px;
+	fill: #FCFCFC;
+	opacity: 0;
+}
+
+.modal__check--box:checked + .privat__police--text > .our-check-box {
+	background-color: #404BBF;
+	border-color: #404BBF;
+}
+
+.modal__check--box:focus + .privat__police--text > .our-check-box {
+	outline: 1px solid #4D5AE5;
+}
+
+.modal__check--box:checked + .privat__police--text > .our-check-box > .input__svg--check {
+	opacity: 1;
+}
+
+.modal__button--send {
+	display: block;
+	min-width: 169px;
+	height: 56px;
+	padding: 16px 32px;
+	margin: 24px auto 0 auto;
+
+	border-radius: 4px;
+	background: var(--IRIS, #4D5AE5);
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+
+	color: var(--white-text-color);
+	text-align: center;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1.5;
+	letter-spacing: 0.04em;
+}
+/* ===== / INPUT FORMM ===== */
+/* ------------------------------------ */
 /* ===== / MODAL WINDOW END ===== */
 
 
@@ -769,8 +948,90 @@ img {
 .footer-icon-social-link:focus {
 	background-color: #31d0aa;
 }
+/* ========== FOOTER INPUT-SUBSCRIBE ========== */
+.footer__input--wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-/* PORTFOLIO PAGE*/ /* PORTFOLIO PAGE*/
+	margin-top: 16px;
+}
+
+.footer__input--subscribe {
+	margin-left: 80px;
+}
+
+.label__title--text {
+	color: var(--white-text-color);
+
+	/* Body Medium */
+	font-weight: 500;
+	line-height: 1.5;
+	letter-spacing: 0.02em;
+}
+
+.footer__input--field {
+	color: var(--footer-logo-text-color);
+	background-color: transparent;
+	width: 264px;
+	height: 40px;
+	/* width: 100%; */
+	padding: 8px 16px 8px 16px;
+
+	border-radius: 4px;
+	border: 1px solid var(--white-text-color);
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+
+	font-family: Roboto;
+	font-size: 12px;
+	line-height: 2;
+	letter-spacing: 0.03em;
+}
+
+.footer__input--field::placeholder {
+	color: var(--white-text-color);
+	font-family: Roboto;
+	font-weight: 400;
+	line-height: 2; /* 200% */
+	letter-spacing: 0.03em;
+}
+
+.footer__subscribe--button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	color: var(--white-text-color);
+	border-color: var(--fourth-background-color);
+	background: var(--fourth-background-color);
+
+	cursor: pointer;
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+	padding: 8px 24px;
+	margin-left: 24px;
+	border-radius: 4px;
+	min-width: 165px;
+	/* Button Text */
+	font-family: Roboto;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1.5;
+	letter-spacing: 0.04em;
+}
+
+.icon__footer--plane {
+	margin-left: 16px;
+}
+
+.footer__subscribe--button:hover,
+.footer__subscribe--button:focus {
+	background-color: var(--hover-button-color);
+	border-color: var(--hover-button-color);
+}
+
+/* ========== / FOOTER INPUT-SUBSCRIBE ========== */
+/* -------------------------------------------------- */
+/* ========== PORTFOLIO PAGE ========== */
 
 section {
 	padding-top: 96px;
